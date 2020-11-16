@@ -51,7 +51,6 @@ let employees = [
   let dep=[];
   for ( let j = 0 ; j < employees.length; j++ ) {
     result1 = Object.keys(employees[j]).map(key => ({type: key, value: employees[j][key]}));
-    // console.log(result1);
     obj3.push(employees[j]);
     if(obj2.length === 0){
     for (let i=0 ; i<result1.length; i++){
@@ -117,29 +116,6 @@ for(let i=0; i<uniqueChars.length; i++){
 document.getElementById("departments").innerHTML = select;  
 }  
   }
-  function sortbyval(value){
-    var table, rows, switching, i, x, y, shouldSwitch;
-    table = document.getElementById("myTable");
-    switching = true;
-    while (switching) {
-      switching = false;
-      rows = table.rows;
-      for (i = 1; i < (rows.length - 1); i++) {
-        shouldSwitch = false;
-        x = rows[i].getElementsByTagName("TD")[1];
-        y = rows[i + 1].getElementsByTagName("TD")[1];
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-          shouldSwitch = true;
-          break;
-        }
-      }
-      if (shouldSwitch) {
-        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-        switching = true;
-      }
-    }
-  }
-
   const myTableTbody = document.querySelector('#myTable tbody');
 const myTableThead = document.querySelector('#myTable thead');
 
@@ -176,43 +152,7 @@ document.querySelector('#selectionOrder').addEventListener('change', function(){
   arrayToTable(myTableJson.rows, myTableTbody, myTableThead);
 });
 var tabappend = "<tbody>"
-/*document.querySelector('#departments').addEventListener('change', function(){
-    let tableJson = {rows:[]};
-    let depval = this.value;
-   var table = document.getElementById("bodyval");
-   var rowCount = table.rows.length;
-tabappend='';
-			for(var i=0; i<rowCount; i++) {
-				var row = table.rows[i];
-                var chkbox = row.cells[3].innerText;
-                //var compar= chkbox.data;
-				if(chkbox.includes(depval)) {
-					//table.deleteRow(i);
-					//rowCount--;
-                    //i--;
-                    tableJson.rows.push(row);
-                    tabappend+="<tr>";
-                    for(let j = 0; j <  row.cells.length; j ++ ){
-                    tabappend += "<td>";
-                    tabappend  += row.cells[j].innerHTML;
-                    tabappend += "</td>";
-                }
-                    tabappend += "</tr>";
-                   
-				}
-
-               
-               
-            }
-            document.getElementById("bodyval").innerHTML= tabappend;
-      });*/
-     function  resettable(){
-       // var table = document.getElementById ("myTable");
-       // table.refresh ();
-       document.getElementById('departments').value='department';
-       document.getElementById('namesearch').value='';
-       document.getElementById("bodyval").innerHTML=tbody;
-      }
+    
       function searchbutton(){
         var departmnt = document.getElementById("departments");
         var selectedText = departmnt.options[departmnt.selectedIndex].innerHTML;
@@ -251,5 +191,10 @@ tabappend='';
                 }
                 document.getElementById("bodyval").innerHTML= tabappend;
       }
+      function  resettable(){
+        document.getElementById('departments').value='department';
+        document.getElementById('namesearch').value='';
+        document.getElementById("bodyval").innerHTML=tbody;
+       }
 console.log(obj2);
 console.log(obj3);
