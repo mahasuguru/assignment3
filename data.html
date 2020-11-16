@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typescript</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+        <style>
+            table, th, td {
+              border: 1px solid black;
+             width:auto;
+              border-collapse: collapse;
+            }
+            .container{
+                width:100%;
+            }
+            
+
+hr{
+    border:1px solid #160b0be7;  
+}
+            </style>
+    </head>
+    
+    <body >
+        <h3>Employee details <span id="totalemployye"></span></h3> 
+       <hr>
+       <div  class="container">
+       <select name="department" id="departments" onfocus="getdepartmentlist()">
+        </select>
+        <input id="namesearch" name= "namesearch" placeholder="enter nane / email">
+        <button id="search" value="search" onclick="searchbutton()">search</button>
+        <select id="selectionOrder" name="sortt" value="sortby">
+           <option value="nameAsc" selected="selected" >name[a-z]</option>
+           <option  value="nameDesc">name[z-a]</option>
+           <option value="ageAsc"  >ageasc</option>
+           <option value="ageDesc" >agedesc</option>
+           <option value="email" >email</option></select>
+           <button value="reset" onclick="resettable()">reset or reload</button>
+       <p id="info" style="font-style:italic;"></p>
+            <table id="myTable" >
+                <thead>
+                    <tr id=headval >
+                        
+                    </tr>
+                </thead>
+                <tbody  id="bodyval" >
+                  
+                </tbody>
+            </table>
+        </div>
+       <script src="data.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </body>
+   
+</html>
