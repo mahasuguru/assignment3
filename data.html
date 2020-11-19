@@ -8,15 +8,19 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    
         <style>
-            table, th, td {
+            table {
               border: 1px solid black;
-             width:auto;
+             width:100%;
               border-collapse: collapse;
             }
             .container{
                 width:100%;
             }
+             th, td{
+                border: 1px solid black;
             
+              border-collapse: collapse;
+            }
 
 hr{
     border:1px solid #160b0be7;  
@@ -24,21 +28,26 @@ hr{
             </style>
     </head>
     
-    <body >
+    <body class="container">
         <h3>Employee details <span id="totalemployye"></span></h3> 
        <hr>
        <div  class="container">
+           <div>
        <select name="department" id="departments" onfocus="getdepartmentlist()">
         </select>
         <input id="namesearch" name= "namesearch" placeholder="enter nane / email">
         <button id="search" value="search" onclick="searchbutton()">search</button>
-        <select id="selectionOrder" name="sortt" value="sortby">
-           <option value="nameAsc" selected="selected" >name[a-z]</option>
-           <option  value="nameDesc">name[z-a]</option>
-           <option value="ageAsc"  >ageasc</option>
-           <option value="ageDesc" >agedesc</option>
-           <option value="email" >email</option></select>
+        
            <button value="reset" onclick="resettable()">reset or reload</button>
+           
+           <select id="selectionOrder"  name="sortt" value="sortby">
+            <option selected disabled hidden value="sortby">sortby</option>
+            <option value="nameAsc"  >name[a-z]</option>
+            <option  value="nameDesc">name[z-a]</option>
+            <option value="ageAsc"  >ageasc</option>
+            <option value="ageDesc" >agedesc</option>
+            <option value="email" >email</option></select>
+        </div>
        <p id="info" style="font-style:italic;"></p>
             <table id="myTable" >
                 <thead>
